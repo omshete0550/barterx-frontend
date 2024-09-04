@@ -22,8 +22,8 @@
   font-size: 1em;
   text-align: center;
   margin-bottom: 1.5em;
-  /* color: rgb(147 83 211); */
 }
+
 /* category */
 .category-container {
   margin-top: 2em;
@@ -31,11 +31,331 @@
 
 /* values */
 
+.values-card {
+  background-color: #18181b;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05), 0px 8px 15px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 56px 16px 16px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+  transition: box-shadow 0.25s;
+  width: 20em;
+}
+.values-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.015);
+}
+.values-card .icon {
+  z-index: 2;
+  position: relative;
+  display: table;
+  padding: 8px;
+}
+.values-card .icon::after {
+  content: "";
+  position: absolute;
+  inset: 4.5px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  transition: background-color 0.25s, border-color 0.25s;
+}
+.values-card .icon svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 24px;
+  height: 24px;
+  transform: translateZ(0);
+  color: #d4d4d8;
+  transition: color 0.25s;
+}
+.values-card h4 {
+  z-index: 2;
+  position: relative;
+  margin: 12px 0 4px 0;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 2;
+  color: #ffffff;
+}
+.values-card p {
+  z-index: 2;
+  position: relative;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #a1a1aa;
+}
+.values-card .shine {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.values-card .shine:before {
+  content: "";
+  width: 150%;
+  padding-bottom: 150%;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 55%;
+  filter: blur(35px);
+  opacity: 0.1;
+  transform: translateX(-50%);
+  background-image: conic-gradient(
+    from 205deg at 50% 50%,
+    rgba(98, 16, 185, 0) 0deg,
+    rgb(147 83 211) 25deg,
+    rgba(147, 83, 211, 0.18) 295deg,
+    rgba(98, 16, 185, 0) 360deg
+  );
+}
+.values-card .background {
+  border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    circle at 60% 5%,
+    black 0%,
+    black 15%,
+    transparent 60%
+  );
+  mask-image: radial-gradient(
+    circle at 60% 5%,
+    black 0%,
+    black 15%,
+    transparent 60%
+  );
+}
+.values-card .background .tiles {
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.values-card .background .tiles .tile {
+  position: absolute;
+  background-color: rgba(98, 16, 185, 0.05);
+  -webkit-animation-duration: 8s;
+  animation-duration: 8s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 0;
+}
+.values-card .background .tiles .tile.tile-4,
+.values-card .background .tiles .tile.tile-6,
+.values-card .background .tiles .tile.tile-10 {
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+.values-card .background .tiles .tile.tile-3,
+.values-card .background .tiles .tile.tile-5,
+.values-card .background .tiles .tile.tile-8 {
+  -webkit-animation-delay: -4s;
+  animation-delay: -4s;
+}
+.values-card .background .tiles .tile.tile-2,
+.values-card .background .tiles .tile.tile-9 {
+  -webkit-animation-delay: -6s;
+  animation-delay: -6s;
+}
+.values-card .background .tiles .tile.tile-1 {
+  top: 0;
+  left: 0;
+  height: 10%;
+  width: 22.5%;
+}
+.values-card .background .tiles .tile.tile-2 {
+  top: 0;
+  left: 22.5%;
+  height: 10%;
+  width: 27.5%;
+}
+.values-card .background .tiles .tile.tile-3 {
+  top: 0;
+  left: 50%;
+  height: 10%;
+  width: 27.5%;
+}
+.values-card .background .tiles .tile.tile-4 {
+  top: 0;
+  left: 77.5%;
+  height: 10%;
+  width: 22.5%;
+}
+.values-card .background .tiles .tile.tile-5 {
+  top: 10%;
+  left: 0;
+  height: 22.5%;
+  width: 22.5%;
+}
+.values-card .background .tiles .tile.tile-6 {
+  top: 10%;
+  left: 22.5%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.values-card .background .tiles .tile.tile-7 {
+  top: 10%;
+  left: 50%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.values-card .background .tiles .tile.tile-8 {
+  top: 10%;
+  left: 77.5%;
+  height: 22.5%;
+  width: 22.5%;
+}
+.values-card .background .tiles .tile.tile-9 {
+  top: 32.5%;
+  left: 50%;
+  height: 22.5%;
+  width: 27.5%;
+}
+.values-card .background .tiles .tile.tile-10 {
+  top: 32.5%;
+  left: 77.5%;
+  height: 22.5%;
+  width: 22.5%;
+}
+@-webkit-keyframes tile {
+  0%,
+  12.5%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  82.5% {
+    opacity: 0;
+  }
+}
+@keyframes tile {
+  0%,
+  12.5%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  82.5% {
+    opacity: 0;
+  }
+}
+.values-card .background .line {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+.values-card .background .line:before,
+.values-card .background .line:after {
+  content: "";
+  position: absolute;
+  background-color: #2a2b2c;
+  transition: transform 0.35s;
+}
+.values-card .background .line:before {
+  left: 0;
+  right: 0;
+  height: 1px;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+.values-card .background .line:after {
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  transform-origin: 50% 0;
+  transform: scaleY(0);
+}
+.values-card .background .line.line-1:before {
+  top: 10%;
+}
+.values-card .background .line.line-1:after {
+  left: 22.5%;
+}
+.values-card .background .line.line-1:before,
+.values-card .background .line.line-1:after {
+  transition-delay: 0.3s;
+}
+.values-card .background .line.line-2:before {
+  top: 32.5%;
+}
+.values-card .background .line.line-2:after {
+  left: 50%;
+}
+.values-card .background .line.line-2:before,
+.values-card .background .line.line-2:after {
+  transition-delay: 0.15s;
+}
+.values-card .background .line.line-3:before {
+  top: 55%;
+}
+.values-card .background .line.line-3:after {
+  right: 22.5%;
+}
+.values-card:hover {
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.04), 0px 5px 10px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+.values-card:hover .icon::after {
+  background-color: rgba(98, 16, 185, 0.1);
+  border-color: rgba(98, 16, 185, 0.2);
+}
+.values-card:hover .icon svg {
+  color: rgb(147 83 211);
+}
+.values-card:hover .shine {
+  opacity: 1;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+}
+.values-card:hover .background .tiles {
+  opacity: 1;
+  transition-delay: 0.25s;
+}
+.values-card:hover .background .tiles .tile {
+  -webkit-animation-name: tile;
+  animation-name: tile;
+}
+.values-card:hover .background .line {
+  opacity: 1;
+  transition-duration: 0.15s;
+}
+.values-card:hover .background .line:before {
+  transform: scaleX(1);
+}
+.values-card:hover .background .line:after {
+  transform: scaleY(1);
+}
+.values-card:hover .background .line.line-1:before,
+.values-card:hover .background .line.line-1:after {
+  transition-delay: 0s;
+}
+.values-card:hover .background .line.line-2:before,
+.values-card:hover .background .line.line-2:after {
+  transition-delay: 0.15s;
+}
+.values-card:hover .background .line.line-3:before,
+.values-card:hover .background .line.line-3:after {
+  transition-delay: 0.3s;
+}
 .values-container {
   margin-top: 2em;
 }
 
-.gradient-cards {
+/* .gradient-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
@@ -124,7 +444,7 @@
   color: rgba(255, 255, 255, 0.5);
   font-size: 16px;
   max-width: 470px;
-}
+} */
 
 /* partners */
 .partner-container {

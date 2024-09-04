@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Image, Input } from "@nextui-org/react";
+import { Button, Image, Input } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/react";
 import { Select, SelectItem } from "@nextui-org/react";
 import "./AddProduct.css";
 import { DatePicker } from "@nextui-org/react";
+import { useSelector } from "react-redux";
+import axios from "axios";
 
 const category = [
   { key: "electronics", label: "Electronics" },
@@ -24,6 +26,21 @@ const condition = [
 
 const AddProduct = () => {
   const [selectedImages, setSelectedImages] = useState([]);
+  const user = useSelector((state) => state.user.currentUser);
+  // console.log(user);
+
+  const [inputVal, setInputVal] = useState({
+    userId: user.details._id,
+    name: "",
+    mrpBuy: "",
+    photos: "",
+    desc: "",
+    category: "",
+    condition: "",
+    city: "",
+    age: "",
+    status: "Available",
+  });
 
   const handleImageChange = (event) => {
     const files = event.target.files;
@@ -31,6 +48,32 @@ const AddProduct = () => {
       URL.createObjectURL(file)
     );
     setSelectedImages((prevImages) => [...prevImages, ...newImages]);
+    setInputVal((prevState) => ({
+      ...prevState,
+      photos: newImages,
+    }));
+  };
+
+  const getData = (e) => {
+    const { value, name } = e.target;
+    setInputVal((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(inputVal);
+    try {
+      const response = await axios.post(
+        "https://barterx.onrender.com/api/products",
+        inputVal
+      );
+      console.log("Data successfully posted", response.data);
+    } catch (error) {
+      console.error("Error posting data", error);
+    }
   };
 
   return (
@@ -44,21 +87,23 @@ const AddProduct = () => {
             <div className="product-desc pt-5">
               <Input
                 isRequired
+                name="name"
                 key="outside"
                 type="text"
                 label="Product Name"
                 labelPlacement="outside"
                 placeholder="Enter your product name"
-                // className="max-w-xs"
+                onChange={getData}
               />
             </div>
             <div className="product-desc pt-5">
               <Textarea
                 isRequired
+                name="desc"
                 label="Description"
                 labelPlacement="outside"
                 placeholder="Enter your description"
-                // className="max-w-xs"
+                onChange={getData}
               />
             </div>
           </div>
@@ -95,8 +140,10 @@ const AddProduct = () => {
                 key="outside"
                 type="number"
                 label="Mrp Price"
+                name="mrpBuy"
                 labelPlacement="outside"
                 placeholder="Enter original price of product (Rs.)"
+                onChange={getData}
               />
             </div>
             <div className="product-desc pt-5">
@@ -107,6 +154,7 @@ const AddProduct = () => {
                 label="Desired Product"
                 labelPlacement="outside"
                 placeholder="Enter your desired product"
+                onChange={getData}
               />
             </div>
           </div>
@@ -116,7 +164,13 @@ const AddProduct = () => {
             <div className="category-select">
               <h6>Category</h6>
               <div key="flat" className="pt-2">
-                <Select variant="flat" label="Select a category" isRequired>
+                <Select
+                  variant="flat"
+                  label="Select a category"
+                  onChange={getData}
+                  isRequired
+                  name="category"
+                >
                   {category.map((categ) => (
                     <SelectItem key={categ.key}>{categ.label}</SelectItem>
                   ))}
@@ -127,7 +181,13 @@ const AddProduct = () => {
             <div className="category-select">
               <h6>Condition</h6>
               <div key="flat" className="pt-2">
-                <Select variant="flat" label="Select a condition" isRequired>
+                <Select
+                  variant="flat"
+                  label="Select a condition"
+                  isRequired
+                  onChange={getData}
+                  name="condition"
+                >
                   {condition.map((cond) => (
                     <SelectItem key={cond.key}>{cond.label}</SelectItem>
                   ))}
@@ -147,28 +207,43 @@ const AddProduct = () => {
                 key="outside"
                 type="number"
                 label="Age"
+                name="age"
                 labelPlacement="outside"
                 placeholder="Enter age"
+                onChange={getData}
               />
             </div>
             <div className="product-desc pt-5">
               <Input
                 isRequired
                 key="outside"
+                name="city"
                 type="text"
                 label="City"
                 labelPlacement="outside"
                 placeholder="Enter city"
+                onChange={getData}
               />
             </div>
           </div>
-          <div className="categ-condition-container">
+          {/* <div className="categ-condition-container">
             <h3>Date</h3>
-
             <div className="date-container pt-5">
               <DatePicker label="Purchase Date" showMonthAndYearPickers />
             </div>
-          </div>
+            <div className="pt-5">
+              <Button color="primary" className="w-full" onClick={handleSubmit}>
+                {" "}
+                Submit
+              </Button>
+            </div>
+          </div> */}
+        </div>
+        <div className="pt-2">
+          <Button color="primary" className="w-[20em]" onClick={handleSubmit}>
+            {" "}
+            Add Product
+          </Button>
         </div>
       </div>
     </>

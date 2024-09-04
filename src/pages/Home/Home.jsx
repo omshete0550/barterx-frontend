@@ -95,6 +95,40 @@ const Home = () => {
             spaceBetween={30}
             pagination={{ clickable: true }}
             modules={[Pagination]}
+            breakpoints={{
+              0: {
+                spaceBetween: 0,
+                slidesPerView: 1,
+              },
+              768: {
+                spaceBetween: 60,
+                slidesPerView: 2,
+              },
+              992: {
+                spaceBetween: 50,
+                slidesPerView: 3,
+              },
+              1280: {
+                spaceBetween: 70,
+                slidesPerView: 3,
+              },
+              1536: {
+                spaceBetween: 80,
+                slidesPerView: 3,
+              },
+              1600: {
+                spaceBetween: 98,
+                slidesPerView: 3,
+              },
+              1920: {
+                spaceBetween: 99,
+                slidesPerView: 3,
+              },
+              2250: {
+                spaceBetween: 120,
+                slidesPerView: 3,
+              },
+            }}
             className="mySwiper"
           >
             {products.map((product) => (

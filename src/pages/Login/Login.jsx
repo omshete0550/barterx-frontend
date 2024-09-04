@@ -21,6 +21,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     login(dispatch, { username, password });
+    console.log("clicked")
   };
 
   const [isVisible, setIsVisible] = React.useState(false);
@@ -79,9 +80,10 @@ const Login = () => {
           </div>
 
           <div className="signup-btn">
-            <Button color="secondary" fullWidth disabled={isFetching} onClick={handleClick}>
+            <Button color="secondary" fullWidth onClick={handleClick}>
               Sign In
             </Button>
+            {/* {error && <span>Something went wrong...</span>}  */}
           </div>
 
           <div className="signin-btn">

@@ -14,6 +14,8 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import { useSelector } from "react-redux";
 import AddProduct from "./pages/AddProduct/AddProduct";
+import Contact from "./pages/Contact/Contact";
+import ProductDetail from "./pages/ProductDetail/ProductDetail";
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
@@ -28,6 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/product-detail" element={<ProductDetail />} />
         <Route
           path="/login"
           element={user ? <Navigate to="/home" /> : <Login />}
