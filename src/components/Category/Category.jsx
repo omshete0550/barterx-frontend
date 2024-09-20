@@ -26,15 +26,13 @@ const categories = [
   },
   {
     name: "Vehicles",
-    image:
-      "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
+    image: "https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg",
     description:
       "Browse our collection of vehicles, from cars to motorcycles, to find your perfect ride.",
   },
   {
     name: "Sports",
-    image:
-      "https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg",
+    image: "https://img.freepik.com/free-photo/sports-tools_53876-138077.jpg",
     description:
       "Gear up with the best sports equipment and accessories for all your athletic needs.",
   },
@@ -54,34 +52,27 @@ const categories = [
   },
   {
     name: "Arts",
-    image:
-      "https://in2english.net/wp-content/uploads/2018/05/Arts2.jpg",
+    image: "https://in2english.net/wp-content/uploads/2018/05/Arts2.jpg",
     description:
       "Find a wide range of art supplies and creative tools to unleash your inner artist.",
   },
-
 ];
 
 const Category = () => {
   return (
-    <div className="category-card-container">
-      {categories.map((category, index) => (
-        <article className="category-card" key={index}>
-          <img
-            className="card__background"
-            src={category.image}
-            alt={`Photo representing ${category.name}`}
-          />
-          <div className="card__content | flow">
-            <div className="card__content--container | flow">
-              <h2 className="card__title">{category.name}</h2>
-              <p className="card__description">{category.description}</p>
+    <>
+      <div className="category-card-container">
+        {categories.map((category, index) => (
+          <div className="category-card">
+            <img src={category.image} alt="" />
+            <div className="text">
+              <h2>{category.name}</h2>
+              <p>{category.description}</p>
             </div>
-            <button className="card__button">Read more</button>
           </div>
-        </article>
-      ))}
-    </div>
+        ))}
+      </div>
+    </>
   );
 };
 

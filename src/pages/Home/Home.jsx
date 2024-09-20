@@ -124,7 +124,6 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-            className="mySwiper"
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
@@ -183,7 +182,6 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-            className="mySwiper"
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
@@ -238,7 +236,6 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-            className="mySwiper"
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
@@ -293,7 +290,6 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-            className="mySwiper"
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>
@@ -348,7 +344,6 @@ const Home = () => {
                 slidesPerView: 3,
               },
             }}
-            className="mySwiper"
           >
             {products.map((product) => (
               <SwiperSlide key={product.id}>

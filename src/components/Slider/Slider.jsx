@@ -13,23 +13,24 @@ export default function Slider() {
           dynamicBullets: true,
         }}
         modules={[Pagination]}
+        spaceBetween={100}
         className="mySwiper"
       >
         <SwiperSlide>
           <img
-            src="https://static.vecteezy.com/system/resources/previews/004/707/493/non_2x/online-shopping-on-phone-buy-sell-business-digital-web-banner-application-money-advertising-payment-ecommerce-illustration-search-vector.jpg"
+            src="https://www.jdmedia.co.za/images/carousel/Ecommerce-Banner-1920.jpg"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://mindstacktechnologies.com/wordpress/wp-content/uploads/2018/01/ecommerce-banner.jpg"
+            src="https://static.vecteezy.com/system/resources/previews/006/828/785/non_2x/paper-art-shopping-online-on-smartphone-and-new-buy-sale-promotion-pink-backgroud-for-banner-market-ecommerce-women-concept-free-vector.jpg"
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src="https://t3.ftcdn.net/jpg/04/65/46/52/360_F_465465254_1pN9MGrA831idD6zIBL7q8rnZZpUCQTy.jpg"
+            src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5f9d97124964309.610f693c40348.png"
             alt=""
           />
         </SwiperSlide>

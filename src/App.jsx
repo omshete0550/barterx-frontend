@@ -16,17 +16,21 @@ import { useSelector } from "react-redux";
 import AddProduct from "./pages/AddProduct/AddProduct";
 import Contact from "./pages/Contact/Contact";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
+import Header from "./components/Header/Header";
 
 function App() {
   const user = useSelector((state) => state.user.currentUser);
   // console.log(user);
   const location = useLocation();
   const hideNavbarFooter =
-    location.pathname === "/login" || location.pathname === "/register";
+    location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/home" || location.pathname === "/product-detail" || location.pathname === "/add-product";
+  const hideHeader =
+    location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <>
       {!hideNavbarFooter && <Navbar />}
+      {!hideHeader && <Header />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Home />} />

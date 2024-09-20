@@ -4,10 +4,10 @@
   width: 100%;
 }
 .register-img-container {
-  width: 50vw;
+  width: 50%;
 }
-.register-img-container  img{
-    height: 100vh;
+.register-img-container img {
+  height: 100vh;
 }
 .register-items-container {
   width: 50%;
@@ -15,22 +15,37 @@
 }
 
 .register-logo img {
-    width: 12em;
-    margin-bottom: 3em;
+  width: 12em;
+  margin-bottom: 3em;
 }
 .register-headline h2 {
-    font-size: 1.5em;
-    font-weight: 600;
-    margin-bottom: 1.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1.5em;
 }
 
-.register-input{
-    margin-bottom: 1.2em;
+.register-input {
+  margin-bottom: 1.2em;
 }
-.signup-btn{
-    margin-top: 2em;
+.signup-btn {
+  margin-top: 2em;
 }
-.signin-btn{
-    margin-top: 1em;
-    text-align: center;
+.signin-btn {
+  margin-top: 1em;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .register-container {
+    flex-direction: column;
+  }
+  .register-img-container {
+    width: 100%;
+  }
+  .register-img-container img {
+    height: 45vh;
+  }
+  .register-items-container {
+    width: 100%;
+  }
 }

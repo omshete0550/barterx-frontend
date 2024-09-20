@@ -27,10 +27,10 @@ const condition = [
 const AddProduct = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const user = useSelector((state) => state.user.currentUser);
-  // console.log(user);
+  console.log(user);
 
   const [inputVal, setInputVal] = useState({
-    userId: user.details._id,
+    // userId: user.details._id,
     name: "",
     mrpBuy: "",
     photos: "",
