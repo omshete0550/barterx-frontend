@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   height: 90vh;
-  background-color: #e7f0ff;
+  background-color: #F5EFFF;
 }
 .left-contact-container {
   width: 60%;
@@ -55,6 +55,11 @@
 }
 .contact-form p {
   color: #333;
+}
+.submit-contact-btn {
+  background-color: #A594F9 !important;
+  width: 100%;
+  margin-top: 1.8em;
 }
 @media (max-width: 991px) {
   .contact-container {

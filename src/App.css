@@ -1,28 +1,28 @@
 .section_padding {
-    padding: 20px 80px;
+  padding: 20px 80px;
+}
+.heading {
+  font-size: 2.4em;
+  margin-bottom: 18px;
+  color: #A594F9;
+}
+@media (max-width: 1023px) {
+  .section_padding {
+    padding: 20px 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section_padding {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section_padding {
+    padding: 20px 20px;
   }
   .heading {
-    font-size: 2.4em;
-    margin-bottom: 18px;
+    font-size: 2em;
   }
-  @media (max-width: 1023px) {
-    .section_padding {
-      padding: 20px 60px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .section_padding {
-      padding: 20px 40px;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .section_padding {
-      padding: 20px 20px;
-    }
-    .heading {
-      font-size: 2em;
-    }
-  }
-  
+}

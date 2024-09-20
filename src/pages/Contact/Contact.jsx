@@ -69,7 +69,7 @@ const Contact = () => {
             />
             <Input type="number" placeholder="Phone Number" className="pt-6" />
             <Textarea placeholder="Enter your description" className="pt-6" />
-            <Button color="primary" className="w-full mt-6" radius="full">
+            <Button color="primary" className="submit-contact-btn" radius="full">
               Submit
             </Button>
 

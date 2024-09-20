@@ -22,14 +22,22 @@ function App() {
   const user = useSelector((state) => state.user.currentUser);
   // console.log(user);
   const location = useLocation();
-  const hideNavbarFooter =
-    location.pathname === "/login" || location.pathname === "/register" || location.pathname === "/home" || location.pathname === "/product-detail" || location.pathname === "/add-product";
+  const hideNavbar =
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/home" ||
+    location.pathname === "/product-detail" ||
+    location.pathname === "/add-product";
   const hideHeader =
-    location.pathname === "/" || location.pathname === "/login" || location.pathname === "/register";
+    location.pathname === "/" ||
+    location.pathname === "/login" ||
+    location.pathname === "/register";
+  const hideFooter =
+    location.pathname === "/login" || location.pathname === "/register";
 
   return (
     <>
-      {!hideNavbarFooter && <Navbar />}
+      {!hideNavbar && <Navbar />}
       {!hideHeader && <Header />}
       <Routes>
         <Route path="/" element={<Landing />} />
@@ -46,7 +54,7 @@ function App() {
         />
         <Route path="/add-product" element={<AddProduct />} />
       </Routes>
-      {!hideNavbarFooter && <Footer />}
+      {!hideFooter && <Footer />}
     </>
   );
 }

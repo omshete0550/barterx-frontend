@@ -58,11 +58,11 @@
 .product-card__price {
   font-size: 1.25rem;
   font-weight: 600;
-  color: rgb(147 83 211);
+  color: #A594F9;
 }
 
 .product-card__btn {
-  background-color: rgb(147 83 211);
+  background-color: #A594F9;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -74,7 +74,7 @@
 }
 
 .product-card__btn:hover {
-  background-color: #333333;
+  background-color: #CDC1FF;
 }
 
 @media (max-width: 480px) {

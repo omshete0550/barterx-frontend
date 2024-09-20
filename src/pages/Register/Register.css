@@ -34,7 +34,11 @@
   margin-top: 1em;
   text-align: center;
 }
-
+.sign-up-btn {
+  background-color: #a594f9 !important;
+  color: #fff !important;
+  font-weight: 600 !important;
+}
 @media (max-width: 1024px) {
   .register-container {
     flex-direction: column;

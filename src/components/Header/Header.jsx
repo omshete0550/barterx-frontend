@@ -50,8 +50,34 @@ const Header = () => {
             <li>
               <Link to="/add-product">Publish</Link>
             </li>
-            <li>
+            <li className="dropdown">
               <Link>Category</Link>
+              {/* <ul class="dropdown-nav">
+                <li>
+                  <Link to="/home">Electronics</Link>
+                </li>
+                <li>
+                  <Link>Vehicles</Link>
+                </li>
+                <li>
+                  <Link to="/add-product">Education</Link>
+                </li>
+                <li>
+                  <Link to="/home">Art</Link>
+                </li>
+                <li>
+                  <Link>Home Appliances</Link>
+                </li>
+                <li>
+                  <Link to="/add-product">Furniture</Link>
+                </li>
+                <li>
+                  <Link to="/home">Sports</Link>
+                </li>
+                <li>
+                  <Link>Miscellaneous</Link>
+                </li>
+              </ul> */}
             </li>
           </ul>
         </div>

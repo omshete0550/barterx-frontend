@@ -15,8 +15,8 @@ const Landing = () => {
             <div className="w-full md:w-1/2 md:px-3">
               <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
                 <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <span className="block xl:inline">Innovating Exchange, </span>
-                  <span className="block text-secondary-500 xl:inline">
+                  <span className="block xl:inline ">Innovating Exchange, </span>
+                  <span className="block xl:inline hero-headline">
                     Igniting Trade.
                   </span>
                 </h1>
@@ -27,7 +27,7 @@ const Landing = () => {
                 <div className="relative flex flex-col sm:flex-row sm:space-x-4">
                   <Link
                     to="/home"
-                    className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white bg-secondary-600 rounded-md sm:mb-0 hover:bg-secondary-700 sm:w-auto"
+                    className="flex items-center w-full px-6 py-3 mb-3 text-lg text-white rounded-md sm:mb-0 hover:bg-secondary-700 sm:w-auto swap-now-btn-hero"
                   >
                     Swap Now
                     <svg
@@ -61,29 +61,7 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      {/* <div className="landing-hero-container section_padding">
-        <div className="hero-headline">
-          <h1>Innovating Exchange, Igniting Trade</h1>
-          <p>
-            Welcome to BarterX, the ultimate destination for modern bartering
-            enthusiasts.
-          </p>
-          <Button color="secondary" variant="shadow" size="lg">
-            Get Started
-          </Button>
-        </div>
-
-        <div className="hero-img">
-          <Image
-            isBlurred
-            width="100%"
-            height="100%"
-            alt="NextUI hero Image"
-            src={hero}
-          />
-        </div>
-      </div> */}
-
+  
       <div className="category-container section_padding">
         <h1 className="heading">Category</h1>
         <Category />

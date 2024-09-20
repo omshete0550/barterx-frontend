@@ -240,7 +240,7 @@ const AddProduct = () => {
           </div> */}
         </div>
         <div className="pt-2">
-          <Button color="primary" className="w-[20em]" onClick={handleSubmit}>
+          <Button color="primary" className="add-product-btn" onClick={handleSubmit}>
             {" "}
             Add Product
           </Button>

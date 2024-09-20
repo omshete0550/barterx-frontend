@@ -117,7 +117,7 @@ const Register = () => {
           </div>
 
           <div className="signup-btn">
-            <Button color="secondary" fullWidth onClick={handleClick}>
+            <Button className="sign-up-btn" fullWidth onClick={handleClick}>
               Sign Up
             </Button>
             {/* <Divider className="my-4" />
